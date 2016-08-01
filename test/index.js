@@ -1,7 +1,10 @@
+import "../";
 import { expect } from "chai";
 
-describe("index", function() {
+describe("sameStructureAs", function() {
 
-    it("works");
+    it("works", () => {
+        expect([].sameStructureAs([])).to.be.true;
+    });
 
 });
