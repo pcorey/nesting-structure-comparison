@@ -10,6 +10,8 @@ describe("sameStructureAs", function() {
         expect([[], 1].sameStructureAs([[], []])).to.be.false;
         expect([[], [1]].sameStructureAs([[], [1]])).to.be.true;
         expect([[], [1]].sameStructureAs([[], [[]]])).to.be.false;
+        expect([].sameStructureAs(1)).to.be.false;
+        expect([1].sameStructureAs([1, 2])).to.be.false;
     });
 
 });
