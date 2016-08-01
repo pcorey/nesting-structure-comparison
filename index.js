@@ -1,11 +1,10 @@
 import _ from "lodash";
 
 Array.prototype.sameStructureAs = function(other) {
-    if (_.isArray(this[0]) && _.isArray(other[0])) {
-        return true;
-    }
-    else if (!_.isArray(this[0]) && !_.isArray(other[0])) {
-        return true;
-    }
-    return false;
+    let comparisons = _.zipWith(this, other, (a, b) => {
+        let bothArrays = _.isArray(a) && _.isArray(b);
+        let bothNot = !_.isArray(a) && !_.isArray(b);
+        return bothArrays || bothNot;
+    });
+    return _.every(comparisons);
 }
