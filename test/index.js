@@ -5,6 +5,7 @@ describe("sameStructureAs", function() {
 
     it("works", () => {
         expect([].sameStructureAs([])).to.be.true;
+        expect([1].sameStructureAs([[]])).to.be.false;
     });
 
 });
